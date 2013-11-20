@@ -1,5 +1,4 @@
-package com.example.wifi_chat;
-
+package com.mpc.productapplication;
 
 public class user {
 	private String name;
@@ -45,6 +44,15 @@ public class user {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	
+	public static user generateCake(){
+		user user = new user();
+		user.setNikname("nutella");
+		user.setPassword("creamed");
+		
+		return user;
 	}
 	
 }
