@@ -46,20 +46,22 @@ app.post('/aduser', function(request, result){
     result.set("ok");
 });
 
-app.get('/Avio',function(req,res,next) {
+app.get('/getuser',function(req,res,next) {
 //connection.connect();
 
-connection.query('SELECT * from Avio', function(err, rows, fields) {
+connection.query('SELECT * from user', function(err, rows, fields) {
     if (err) throw err;
     //console.log('The solution is: ', rows[0].username);
     var users_array = new Array();
     for(var i = 0; i< rows.length; i++){
         var user = new user_module.user();
-        user.set_ID(rows[i].ID);
+        user.set_ID(rows[i].id);
         user.set_name(rows[i].name);
-        user.set_aviopilot(rows[i].aviopilot);
-        user.set_speed(rows[i].speed);
-        user.set_weight(rows[i].weight);
+        user.set_surname(rows[i].surname);
+        user.set_nikname(rows[i].nikname);
+        user.set_mail(rows[i].email);
+        user.set_password(rows[i].password);
+        user.set_date(rows[i].date);
         users_array.push(user);
     }
 

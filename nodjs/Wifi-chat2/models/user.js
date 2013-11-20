@@ -1,4 +1,5 @@
 exports.user = function(){
+    var ID;
     var name;
     var surname;
     var date;
@@ -6,7 +7,13 @@ exports.user = function(){
     var gender;
     var password;
     var nikname;
-    
+
+    this.get_ID = function(){
+        return this.ID;
+    }
+    this.set_ID = function(ID){
+        this.ID = ID;
+    }
     this.get_name = function(){
         return this.name;
     }
